@@ -25,13 +25,20 @@ A deep learning-based solution to automatically decode CAPTCHA images using Conv
 
 ---
 
-## 📸 Demo
-
-![CAPTCHA Solving Demo](demo.gif) <!-- Replace demo.gif with your actual file once uploaded -->
-
-> The model takes an input CAPTCHA image, processes it through several image transformation stages, and outputs the decoded text prediction.
-
----
 
 ## 🏗️ Model Architecture
 
+Input (Captcha Image - 200x50x1)
+│
+├── Conv2D (32 filters, 3x3) + ReLU
+├── MaxPooling2D (2x2)
+├── Dropout (0.25)
+│
+├── Conv2D (64 filters, 3x3) + ReLU
+├── MaxPooling2D (2x2)
+├── Dropout (0.25)
+│
+├── Flatten
+├── Dense (128) + ReLU
+├── Dropout (0.5)
+└── Dense (Output Layer - Softmax for each character)
