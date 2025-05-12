@@ -24,21 +24,3 @@ A deep learning-based solution to automatically decode CAPTCHA images using Conv
 | Matplotlib   | Visualizations & Debugging |
 
 ---
-
-
-## 🏗️ Model Architecture
-
-Input (Captcha Image - 200x50x1)
-│
-├── Conv2D (32 filters, 3x3) + ReLU
-├── MaxPooling2D (2x2)
-├── Dropout (0.25)
-│
-├── Conv2D (64 filters, 3x3) + ReLU
-├── MaxPooling2D (2x2)
-├── Dropout (0.25)
-│
-├── Flatten
-├── Dense (128) + ReLU
-├── Dropout (0.5)
-└── Dense (Output Layer - Softmax for each character)
